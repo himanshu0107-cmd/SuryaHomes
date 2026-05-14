@@ -1,6 +1,7 @@
 'use client';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X, Phone, ChevronDown } from 'lucide-react';
 
@@ -66,27 +67,16 @@ export default function Navbar() {
         <div className="container flex items-center justify-between" style={{height:'72px'}}>
 
           {/* ── LOGO ── */}
-          <Link href="/" className="flex items-center gap-3 group flex-shrink-0">
-            <svg width="40" height="40" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg"
-              className="transition-transform duration-300 group-hover:scale-110">
-              <circle cx="22" cy="22" r="12" fill="#C9940A" fillOpacity="0.15"/>
-              <circle cx="22" cy="22" r="10" fill="none" stroke="#C9940A" strokeWidth="1.5"/>
-              <line x1="22" y1="4" x2="22" y2="10" stroke="#C9940A" strokeWidth="2" strokeLinecap="round"/>
-              <line x1="22" y1="34" x2="22" y2="40" stroke="#C9940A" strokeWidth="2" strokeLinecap="round"/>
-              <line x1="4" y1="22" x2="10" y2="22" stroke="#C9940A" strokeWidth="2" strokeLinecap="round"/>
-              <line x1="34" y1="22" x2="40" y2="22" stroke="#C9940A" strokeWidth="2" strokeLinecap="round"/>
-              <line x1="8.34" y1="8.34" x2="12.58" y2="12.58" stroke="#C9940A" strokeWidth="1.5" strokeLinecap="round"/>
-              <line x1="31.42" y1="31.42" x2="35.66" y2="35.66" stroke="#C9940A" strokeWidth="1.5" strokeLinecap="round"/>
-              <line x1="35.66" y1="8.34" x2="31.42" y2="12.58" stroke="#C9940A" strokeWidth="1.5" strokeLinecap="round"/>
-              <line x1="12.58" y1="31.42" x2="8.34" y2="35.66" stroke="#C9940A" strokeWidth="1.5" strokeLinecap="round"/>
-              <path d="M22 12 L30 18 L30 28 L14 28 L14 18 Z" fill="#1A2E4A"/>
-              <path d="M12 19 L22 11 L32 19" fill="none" stroke="#C9940A" strokeWidth="2.2" strokeLinejoin="round"/>
-              <rect x="19" y="21" width="6" height="7" rx="1" fill="#C9940A"/>
-            </svg>
-            <div className="hidden sm:block">
-              <div className="font-serif font-bold text-white leading-none tracking-tight" style={{fontSize:'18px'}}>Surya Homes</div>
-              <div className="font-semibold tracking-widest uppercase" style={{fontSize:'9px',color:'rgba(201,148,10,0.9)',letterSpacing:'0.12em'}}>Your Dream, Our Foundation</div>
-            </div>
+          <Link href="/" className="flex items-center group flex-shrink-0">
+            <Image
+              src="/surya-homes-logo.png"
+              alt="Surya Homes – Building Trust. Creating Futures."
+              width={160}
+              height={52}
+              priority
+              className="transition-transform duration-300 group-hover:scale-105"
+              style={{ objectFit: 'contain', height: '52px', width: 'auto' }}
+            />
           </Link>
 
           {/* ── DESKTOP NAV ── */}

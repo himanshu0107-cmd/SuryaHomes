@@ -80,17 +80,13 @@ export default function SpaNavbar({ onLogout, isDark, toggleTheme, view, onNavig
 
           {/* Logo */}
           <button onClick={() => navigate('home')} style={{ display: 'flex', alignItems: 'center', gap: '12px', background: 'transparent', border: 'none', cursor: 'pointer' }}>
-            <svg width="36" height="36" viewBox="0 0 44 44" fill="none">
-              <circle cx="22" cy="22" r="12" fill="#C9A84C" fillOpacity="0.15"/>
-              <circle cx="22" cy="22" r="10" fill="none" stroke="#C9A84C" strokeWidth="1.5"/>
-              <line x1="22" y1="4" x2="22" y2="10" stroke="#C9A84C" strokeWidth="2" strokeLinecap="round"/>
-              <line x1="22" y1="34" x2="22" y2="40" stroke="#C9A84C" strokeWidth="2" strokeLinecap="round"/>
-              <line x1="4" y1="22" x2="10" y2="22" stroke="#C9A84C" strokeWidth="2" strokeLinecap="round"/>
-              <line x1="34" y1="22" x2="40" y2="22" stroke="#C9A84C" strokeWidth="2" strokeLinecap="round"/>
-              <path d="M22 13 L30 19 L30 28 L14 28 L14 19 Z" fill="#0A1628"/>
-              <path d="M12 20 L22 12 L32 20" fill="none" stroke="#C9A84C" strokeWidth="2.2" strokeLinejoin="round"/>
-              <rect x="19" y="21" width="6" height="7" rx="1" fill="#C9A84C"/>
-            </svg>
+            <img
+              src="/Logo_1-transparent.png"
+              alt="Surya Homes logo"
+              width={36}
+              height={36}
+              style={{ display: 'block', objectFit: 'contain', filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.25))' }}
+            />
             <div>
               <div style={{ fontFamily:"'Poppins',sans-serif", fontWeight:700, color: (isLightScrolled || (isPageView && !isDark)) ? '#0A1628' : 'white', fontSize:'17px', lineHeight:1, transition:'color 0.3s' }}>Surya Homes</div>
               <div style={{ fontSize:'9px', color:'rgba(201,168,76,0.85)', letterSpacing:'0.12em', textTransform:'uppercase', marginTop:'3px' }}>Your Dream, Our Foundation</div>

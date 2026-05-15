@@ -39,7 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         />
         <link
           rel="icon"
-          href="/surya-homes-logo.png"
+          href="/Logo_1-transparent.png"
           type="image/png"
         />
       </head>

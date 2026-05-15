@@ -69,13 +69,13 @@ export default function Navbar() {
           {/* ── LOGO ── */}
           <Link href="/" className="flex items-center group flex-shrink-0">
             <Image
-              src="/surya-homes-logo.png"
-              alt="Surya Homes – Building Trust. Creating Futures."
+              src="/Logo_1-transparent.png"
+              alt="Surya Homes logo"
               width={160}
               height={52}
               priority
               className="transition-transform duration-300 group-hover:scale-105"
-              style={{ objectFit: 'contain', height: '52px', width: 'auto' }}
+              style={{ objectFit: 'contain', height: '52px', width: 'auto', filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.25))' }}
             />
           </Link>
 

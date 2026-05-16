@@ -53,6 +53,18 @@ export default function Navbar() {
     ? '0 1px 0 rgba(255,255,255,0.06), 0 8px 40px -8px rgba(0,0,0,0.5)'
     : 'none';
 
+  const showLogoBackdrop = navBg !== 'transparent';
+  const logoBackdropStyle = showLogoBackdrop
+    ? {
+        background: 'rgba(255,255,255,0.92)',
+        border: '1px solid rgba(255,255,255,0.14)',
+        borderRadius: '14px',
+        padding: '6px 10px',
+        display: 'flex',
+        alignItems: 'center',
+      }
+    : undefined;
+
   return (
     <>
       <nav
@@ -68,15 +80,22 @@ export default function Navbar() {
 
           {/* ── LOGO ── */}
           <Link href="/" className="flex items-center group flex-shrink-0">
-            <Image
-              src="/Logo_1-transparent.png"
-              alt="Surya Homes logo"
-              width={160}
-              height={52}
-              priority
-              className="transition-transform duration-300 group-hover:scale-105"
-              style={{ objectFit: 'contain', height: '52px', width: 'auto', filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.25))' }}
-            />
+            <span style={logoBackdropStyle}>
+              <Image
+                src="/Logo_1-transparent.png"
+                alt="Surya Homes logo"
+                width={160}
+                height={52}
+                priority
+                className="transition-transform duration-300 group-hover:scale-105"
+                style={{
+                  objectFit: 'contain',
+                  height: '52px',
+                  width: 'auto',
+                  filter: showLogoBackdrop ? 'none' : 'drop-shadow(0 2px 6px rgba(0,0,0,0.25))',
+                }}
+              />
+            </span>
           </Link>
 
           {/* ── DESKTOP NAV ── */}

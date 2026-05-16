@@ -47,13 +47,25 @@ export default function RegisterSection({ onRegister, onBackToLogin }: Props) {
         {/* Logo */}
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>
           <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '12px', marginBottom: '6px' }}>
-            <img
-              src="/Logo_1-transparent.png"
-              alt="Surya Homes logo"
-              width={40}
-              height={40}
-              style={{ display: 'block', objectFit: 'contain', filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.25))' }}
-            />
+            <span
+              style={{
+                background: 'rgba(255,255,255,0.92)',
+                border: '1px solid rgba(255,255,255,0.14)',
+                borderRadius: '14px',
+                padding: '6px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <img
+                src="/Logo_1-transparent.png"
+                alt="Surya Homes logo"
+                width={40}
+                height={40}
+                style={{ display: 'block', objectFit: 'contain' }}
+              />
+            </span>
             <div style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, color: 'white', fontSize: '22px', lineHeight: 1 }}>
               Surya Homes
             </div>

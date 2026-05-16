@@ -66,6 +66,8 @@ export default function SpaNavbar({ onLogout, isDark, toggleTheme, view, onNavig
     : 'none';
   const navTextColor = (isLightScrolled || isPageView && !isDark) ? 'rgba(10,22,40,0.7)' : 'rgba(255,255,255,0.75)';
 
+  const showLogoBackdrop = !(isLightScrolled || (isPageView && !isDark));
+
   const isActiveLink = (id: string) => {
     if (view === 'marketplace' && id === 'marketplace') return true;
     if (view === 'list-property' && id === 'list-property') return true;
@@ -80,16 +82,31 @@ export default function SpaNavbar({ onLogout, isDark, toggleTheme, view, onNavig
 
           {/* Logo */}
           <button onClick={() => navigate('home')} style={{ display: 'flex', alignItems: 'center', gap: '12px', background: 'transparent', border: 'none', cursor: 'pointer' }}>
-            <img
-              src="/Logo_1-transparent.png"
-              alt="Surya Homes logo"
-              width={36}
-              height={36}
-              style={{ display: 'block', objectFit: 'contain', filter: 'drop-shadow(0 2px 6px rgba(0,0,0,0.25))' }}
-            />
+            <span
+              style={showLogoBackdrop ? {
+                background: 'rgba(255,255,255,0.92)',
+                border: '1px solid rgba(255,255,255,0.14)',
+                borderRadius: '12px',
+                padding: '4px',
+                display: 'inline-flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              } : undefined}
+            >
+              <img
+                src="/Logo_1-transparent.png"
+                alt="Surya Homes logo"
+                width={36}
+                height={36}
+                style={{
+                  display: 'block',
+                  objectFit: 'contain',
+                  filter: showLogoBackdrop ? 'none' : 'drop-shadow(0 2px 6px rgba(0,0,0,0.25))',
+                }}
+              />
+            </span>
             <div>
               <div style={{ fontFamily:"'Poppins',sans-serif", fontWeight:700, color: (isLightScrolled || (isPageView && !isDark)) ? '#0A1628' : 'white', fontSize:'17px', lineHeight:1, transition:'color 0.3s' }}>Surya Homes</div>
-              <div style={{ fontSize:'9px', color:'rgba(201,168,76,0.85)', letterSpacing:'0.12em', textTransform:'uppercase', marginTop:'3px' }}>Your Dream, Our Foundation</div>
             </div>
           </button>
 
